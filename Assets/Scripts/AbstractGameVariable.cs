@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace GameVariables {
 	public abstract class BaseGameVariable : ScriptableObject {
-		[SerializeField] private string m_Name;
+		[SerializeField] private string m_DisplayName;
 		[SerializeField, Multiline] private string m_Description;
 
-		public string Name { get { return !string.IsNullOrEmpty(m_Name) ? m_Name : name; } }
+		public string Name { get { return !string.IsNullOrEmpty(m_DisplayName) ? m_DisplayName : name; } }
 
 		public string Description { get { return m_Description; } }
 
