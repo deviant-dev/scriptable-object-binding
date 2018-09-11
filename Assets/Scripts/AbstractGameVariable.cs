@@ -31,7 +31,7 @@ namespace GameVariables {
 
 		public override string ValueString { get { return Value.ToString(); } }
 
-		protected abstract bool IsEqual(T a, T b);
+		protected virtual bool IsEqual(T a, T b) { return a.Equals(b); }
 
 		public event Action<T> OnChanged;
 
