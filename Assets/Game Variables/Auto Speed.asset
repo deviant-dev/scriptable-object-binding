@@ -11,4 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ff3025dab8fc34cad76d3c3a7d4a06, type: 3}
   m_Name: Auto Speed
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_Description: 
   m_InitialValue: 0
+  m_CurrentValue: 0.18125
+  m_MinValue: 0
+  m_MaxValue: 1
