@@ -1,8 +1,8 @@
-﻿using GameVariables;
+﻿using Deviant.GameEvents;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Utils;
+using Deviant.Utils;
 
 namespace Bindings {
 	public class SliderBinding : MonoBehaviour {
@@ -13,7 +13,7 @@ namespace Bindings {
 		private float m_LastSliderValue;
 
 		private void Start() {
-			m_RangeVariable.OnChanged += OnVariableChanged;
+			m_RangeVariable.Changed += OnVariableChanged;
 			m_LastSliderValue = m_SliderControl.value = m_RangeVariable.Progress;
 			if (m_Label) { m_Label.text = m_RangeVariable.Name; }
 		}

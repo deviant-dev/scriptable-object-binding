@@ -1,4 +1,4 @@
-﻿using GameVariables;
+﻿using Deviant.GameEvents;
 using TMPro;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ namespace Bindings {
 		[SerializeField] private TextMeshProUGUI m_Label;
 
 		private void Start() {
-			m_RangeVariable.OnChanged += OnVariableChanged;
+			m_RangeVariable.Changed += OnVariableChanged;
 			m_Label.text = m_RangeVariable.ValueString;
 		}
 
