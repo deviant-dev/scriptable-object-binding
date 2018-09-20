@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
 namespace Deviant.GameEvents {
-	[CreateAssetMenu(menuName = "GameEvent/String", order = 103)]
+	[CreateAssetMenu(menuName = "GameEvent/String", order = (int)MenuOrder.EventString)]
 	public class GameEventString : BaseGameEvent<GameEventString, string> { }
 }

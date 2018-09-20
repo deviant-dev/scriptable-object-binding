@@ -2,7 +2,7 @@
 using Deviant.Utils;
 
 namespace Deviant.GameEvents {
-	[CreateAssetMenu(menuName = "GameVariable/Float", order = 202)]
+	[CreateAssetMenu(menuName = "GameVariable/Float", order = (int)MenuOrder.VariableFloat)]
 	public class GameVariableFloat : BaseGameVariable<GameVariableFloat, float> {
 		protected override float Parse(string stringValue) { return float.Parse(stringValue); }
 		protected override bool Equals(float a, float b) { return a.Approximately(b); }

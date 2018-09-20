@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 namespace Deviant.GameEvents {
-	[CreateAssetMenu(menuName = "GameVariable/FloatRange", order = 203)]
+	[CreateAssetMenu(menuName = "GameVariable/FloatRange", order = (int)MenuOrder.VariableFloatRange)]
 	public class GameVariableFloatRange : GameVariableFloat {
 		[SerializeField] private float m_MinValue;
 		[SerializeField] private float m_MaxValue = 1;
