@@ -81,6 +81,14 @@ public class Storage : MonoBehaviour {
 		StorageData data = new StorageData {variables = m_SavedVariables.Select(gv => new VariableData(gv)).ToArray()};
 		string saveText = JsonUtility.ToJson(data, true);
 		FileUtils.WriteAllText(FilePath, saveText);
+
+#if UNITY_EDITOR
+		string assetPath = FilePath.ReplaceRegex("^.*/Assets/", "Assets/");
+		
+		if (assetPath.StartsWith("Assets/")) {
+			UnityEditor.AssetDatabase.ImportAsset(assetPath);
+		}
+#endif
 	}
 
 	private void OnVariableChanged() { m_Dirty = true; }

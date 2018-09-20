@@ -1,8 +1,8 @@
 ﻿using Deviant.GameEvents;
+using Deviant.Utils;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Deviant.Utils;
 
 namespace Bindings {
 	public class SliderBinding : MonoBehaviour {
