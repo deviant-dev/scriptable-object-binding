@@ -2,30 +2,31 @@
 using Deviant.Utils;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Bindings {
 	public class SliderBinding : MonoBehaviour {
-		[SerializeField] private GameVariableFloatRange m_RangeVariable;
-		[SerializeField] private Slider m_SliderControl;
+		[SerializeField, FormerlySerializedAs("m_RangeVariable")] private GameVariableFloatRange m_Variable;
+		[SerializeField, FormerlySerializedAs("m_SliderControl")] private Slider m_Control;
 		[SerializeField] private TextMeshProUGUI m_Label;
 
 		private float m_LastSliderValue;
 
 		private void Start() {
-			m_RangeVariable.Changed += OnVariableChanged;
-			m_LastSliderValue = m_SliderControl.value = m_RangeVariable.Progress;
-			if (m_Label) { m_Label.text = m_RangeVariable.Name; }
+			m_Variable.Changed += OnVariableChanged;
+			OnVariableChanged(m_Variable.Progress);
+			if (m_Label) { m_Label.text = m_Variable.Name; }
 		}
 
-		private void OnVariableChanged(float value) { m_SliderControl.value = m_RangeVariable.Progress; }
+		private void OnVariableChanged(float value) { m_LastSliderValue = m_Control.value = m_Variable.Progress; }
 
 		private void Update() {
-			if (!m_LastSliderValue.Approximately(m_SliderControl.value)) { m_LastSliderValue = m_RangeVariable.Progress = m_SliderControl.value; }
+			if (!m_LastSliderValue.Approximately(m_Control.value)) { m_LastSliderValue = m_Variable.Progress = m_Control.value; }
 		}
 
 		private void OnValidate() {
-			if (m_Label && m_RangeVariable) { m_Label.text = m_RangeVariable.Name; }
+			if (m_Label && m_Variable) { m_Label.text = m_Variable.Name; }
 		}
 	}
 }
