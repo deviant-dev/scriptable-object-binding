@@ -10,7 +10,7 @@ namespace Deviant.GameEvents {
 
 		public event Action GenericEvent;
 
-		public string Name { get { return m_EventName.IsNullorEmpty() ? name : m_EventName; } }
+		public string Name { get { return m_EventName.IsNullOrEmpty() ? name : m_EventName; } }
 
 		protected void OnEnable() { Init(); }
 

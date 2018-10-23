@@ -87,6 +87,6 @@ namespace Deviant.Utils {
 		}
 
 		[ContractAnnotation("s:null => true")]
-		public static bool IsNullorEmpty(this string s) { return string.IsNullOrEmpty(s); }
+		public static bool IsNullOrEmpty(this string s) { return string.IsNullOrEmpty(s); }
 	}
 }

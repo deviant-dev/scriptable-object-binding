@@ -9,14 +9,14 @@ namespace Deviant.Utils {
 		}
 
 		public static void CreateFoldersFor(string path) {
-			if (path.IsNullorEmpty()) {
+			if (path.IsNullOrEmpty()) {
 				Debug.LogWarning("Can't make a directory for an empty path.");
 				return;
 			}
 
 			string folder = Path.GetDirectoryName(path);
 
-			if (folder.IsNullorEmpty() || Directory.Exists(folder)) { return; }
+			if (folder.IsNullOrEmpty() || Directory.Exists(folder)) { return; }
 
 			Directory.CreateDirectory(folder);
 		}
