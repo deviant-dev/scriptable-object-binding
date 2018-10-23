@@ -52,7 +52,7 @@ namespace Deviant.GameEvents {
 		}
 
 		protected virtual void OnValidate() {
-			if (m_CurrentValue.Equals(m_LastValue)) { return; }
+			if (Equals(m_CurrentValue, m_LastValue)) { return; }
 			m_LastValue = m_CurrentValue;
 			if (Application.isPlaying) { Raise(); }
 		}
