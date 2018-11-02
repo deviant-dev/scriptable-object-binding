@@ -29,7 +29,7 @@ public class Storage : MonoBehaviour {
 
 	private bool m_Dirty;
 
-	private string FilePath { get { return string.Format("{0}/{1}.json", Application.dataPath, m_FileName); } }
+	private string FilePath { get { return string.Format("{0}/{1}.json", Application.persistentDataPath, m_FileName); } }
 
 	private void Start() {
 		Load();
